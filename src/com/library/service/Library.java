@@ -28,6 +28,31 @@ public class Library {
             System.out.println(b.getTitle());
         }
     }
+    // ID'ye göre kitap silme
+    public void remove_book(String bookId) {
+        books.removeIf(b -> b.getBookID() == bookId);
+        System.out.println(bookId + " ID'li kitap silindi.");
+    }
+
+    // Yazara göre listeleme
+    public void list_by_author(String author) {
+        System.out.println("--- " + author + " Kitapları ---");
+        for (Book b : books) {
+            if (b.getAuthor().equalsIgnoreCase(author)) {
+                System.out.println(b.getTitle());
+            }
+        }
+    }
+
+    // Kategoriye (Türe) göre listeleme
+    public void list_by_category(String category) {
+        System.out.println("--- " + category + " Kategorisi ---");
+        for (Book b : books) {
+            if (b.getClass().getSimpleName().equalsIgnoreCase(category)) {
+                System.out.println(b.getTitle());
+            }
+        }
+    }
     public void take_back_book(Book book, Reader reader) {
         System.out.println("[Library] Kitap iade alınıyor: " + book.getTitle());
         reader.return_book(book); // Reader listesinden çıkarır

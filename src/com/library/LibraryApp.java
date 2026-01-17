@@ -9,7 +9,6 @@ import java.time.LocalDate;
 
 public class LibraryApp {
     public static void main(String[] args) {
-        // 1. Kütüphaneciyi oluşturuyoruz
         Librarian librarian = new Librarian("Aslı Yılmaz", "secret123");
 
         // 2. Kütüphaneyi kuruyoruz ve kütüphaneciyi atıyoruz
@@ -18,9 +17,13 @@ public class LibraryApp {
         // 3. Kütüphaneye kitaplar ekliyoruz (new_book metodu)
         Book book1 = new StudyBooks("Java 101", "Deitel", 150.0,32, LocalDate.now());
         Book book2 = new Magazines("Bilim Teknik", "Tübitak", 25.0, 2, LocalDate.now());
+        Book book3= new StudyBooks("Calculus 101", "Birisi", 840,20, LocalDate.now());
+        Book book4= new Magazines("Science", "Öteki", 700, 34, LocalDate.now());
 
         myLibrary.add_book(book1);
         myLibrary.add_book(book2);
+        myLibrary.add_book(book3);
+        myLibrary.add_book(book4);
 
         // 4. Bir öğrenci ve onun üyelik kaydını oluşturuyoruz
         // (Student, MemberRecord'dan türüyor)
